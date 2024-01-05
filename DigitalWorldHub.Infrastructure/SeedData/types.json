@@ -1,0 +1,18 @@
+[
+  {
+    "Id": 1,
+    "Name": "PCs"
+  },
+  {
+    "Id": 2,
+    "Name": "Laptops"
+  },
+  {
+    "Id": 3,
+    "Name": "Monitors"
+  },
+  {
+    "Id": 4,
+    "Name": "Keyboards"
+  }
+]
