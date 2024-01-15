@@ -11,7 +11,7 @@ namespace DigitalWorldHub.Infrastructure.Data
 {
     public class StoreContextSeed
     {
-        public static async Task SeedAsync(StoreContext context, ILoggerFactory loggerFactory)
+        public static async Task SeedAsync(StoreContext context /*ILoggerFactory loggerFactory*/)
         {
             try
             {
@@ -29,7 +29,7 @@ namespace DigitalWorldHub.Infrastructure.Data
                     await context.SaveChangesAsync();
                 }
 
-                if (!context.ProductBrands.Any())
+                if (!context.ProductTypes.Any())
                 {
                     var typesData = File.ReadAllText("../Infrastructure/SeedData/types.json");
 
@@ -43,7 +43,7 @@ namespace DigitalWorldHub.Infrastructure.Data
                     await context.SaveChangesAsync();
                 }
 
-                if (!context.ProductBrands.Any())
+                if (!context.Products.Any())
                 {
                     var productsData = File.ReadAllText("../Infrastructure/SeedData/products.json");
 
@@ -60,8 +60,8 @@ namespace DigitalWorldHub.Infrastructure.Data
             }
             catch (Exception ex)
             {
-                var logger = loggerFactory.CreateLogger<StoreContextSeed>();
-                logger.LogError(ex.Message);
+                //var logger = loggerFactory.CreateLogger<StoreContextSeed>();
+                //logger.LogError(ex.Message);
             }
         }
     }
