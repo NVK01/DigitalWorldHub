@@ -31,9 +31,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DigitalWorldHub.Application\DigitalWorldHub.Application.csproj" />
-    <ProjectReference Include="..\digitalworldhub.client\digitalworldhub.client.esproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="..\DigitalWorldHub.Infrastructure\DigitalWorldHub.Infrastructure.csproj" />
   </ItemGroup>
 
