@@ -21,3 +21,13 @@
 .header-button{
     color:azure;
 }
+.site-logo {
+  background-color: #123d68;
+  border: hidden;
+}
+a{
+    text-decoration:none;
+    &.active{
+        color:#30bb9b;
+    }
+}

@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CoreModule } from './core/core.module';
-import { ShopModule } from './shop/shop.module';
+import { HomeModule } from './home/home.module';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,14 @@ import { ShopModule } from './shop/shop.module';
 
   ],
   imports: [
+    AppRoutingModule,
+    RouterModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
     CoreModule,
-    ShopModule
-
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

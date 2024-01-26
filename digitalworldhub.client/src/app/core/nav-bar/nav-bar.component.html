@@ -1,6 +1,6 @@
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom my-header">
     <div class="col-md-3 mb-2 mb-md-0">
-        <h1>DWH</h1>
+        <button class="site-logo"><h1 routerLink="/home">DWH</h1></button>
     </div>
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style="font-size:larger">
@@ -8,12 +8,12 @@
     Messages
     <div class="cart-no">3</div>
 </a></li>
-        <li><a href="#" class="nav-link px-2 position-relative header-link">
+        <li><a [routerLink]="['/shop']" class="nav-link px-2 position-relative header-link" routerLinkActiv="active">
     Basket
     <div class="cart-no">2</div>
 </a></li>
-        <li><a href="#" class="nav-link px-2 header-link">Profile</a></li>
-        <li><a href="#" class="nav-link px-2 header-link">Make an offer</a></li>
+        <li><a href="#" class="nav-link px-2 header-link" routerLinkActiv="active">Profile</a></li>
+        <li><a href="#" class="nav-link px-2 header-link" routerLinkActiv="active">Make an offer</a></li>
     </ul>
 
     <div class="col-md-3 text-end">
