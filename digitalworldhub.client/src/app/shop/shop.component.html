@@ -1,10 +1,9 @@
-<div class="container">
+<div class="container mt-5">
     <div class="row" *ngIf="types.length > 0 && brands.length > 0">
         <section class="col-3">
             <h5 class="text-warning ms-3">Sort</h5>
             <select class="form-select mb-4" (change)="onSortSelected($event.target.value)">
                 <option *ngFor="let sort of sortOptions"
-                 
                         [value]="sort.value">
                     {{sort.name}}
                 </option>
@@ -45,9 +44,9 @@
                 </app-paging-header>
 
                 <div class="d-flex mt-2">
-                    <input (keyup.enter)="onSearch()" class="form-control mr-2" #search style="width:300px" placeholder="Search" type="text" />
-                    <button (click)="onSearch()" class="btn btn-outline-primary mx-2">Search</button>
-                    <button (click)="onReset()" class="btn btn-outline-success">Reset</button>
+                    <input (keyup.enter)="onSearch()" class="form-control mr-2 mx-2" #search style="width:300px" placeholder="Search" type="text" />
+                    <button (click)="onSearch()" class="btn btn-success mx-2">Search</button>
+                    <button (click)="onReset()" class="btn btn-danger mx-2">Reset</button>
                 </div>
             </div>
 

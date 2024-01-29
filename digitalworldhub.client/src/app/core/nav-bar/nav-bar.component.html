@@ -1,23 +1,29 @@
-<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom my-header">
+<header class="d-flex flex-wrap align-items-center justify-content-center
+justify-content-md-between py-3 mb-4 border-bottom bg-primary">
     <div class="col-md-3 mb-2 mb-md-0">
-        <button class="site-logo"><h1 routerLink="/home">DWH</h1></button>
+        <button class="site-logo badge bg-primary my-2 my-sm-0"><h1 routerLink="/home">DWH</h1></button>
     </div>
 
-    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style="font-size:larger">
-        <li><a href="#" class="nav-link px-2 position-relative header-link">
-    Messages
-    <div class="cart-no">3</div>
-</a></li>
-        <li><a [routerLink]="['/shop']" class="nav-link px-2 position-relative header-link" routerLinkActiv="active">
-    Basket
-    <div class="cart-no">2</div>
-</a></li>
-        <li><a href="#" class="nav-link px-2 header-link" routerLinkActiv="active">Profile</a></li>
-        <li><a href="#" class="nav-link px-2 header-link" routerLinkActiv="active">Make an offer</a></li>
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style="font-size:x-large;">
+        <li>
+            <a href="#" class="nav-link px-3 position-relative header-link">
+                <i class="bi bi-chat mx-1"></i>
+                <div class="cart-no">3</div>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/shop']" class="nav-link px-3 position-relative header-link" routerLinkActiv="active">
+                <i class="bi bi-cart"></i>
+                <div class="cart-no">2</div>
+            </a>
+        </li>
+        <li><a href="#" class="nav-link px-3 header-link" routerLinkActiv="active"><i class="bi bi-person mx-1"></i>Profile</a></li>
+        <li><a href="#" class="nav-link px-3 header-link" routerLinkActiv="active">Make an offer</a></li>
+        <!--  <li><a [routerLink]="['/test-error']" class="nav-link px-2 header-link" routerLinkActiv="active">Errors</a></li> -->
     </ul>
 
-    <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline me-2 header-button">Login</button>
-        <button type="button" class="btn  header-button">Sign-up</button>
+    <div class="col-md-3 text-end ">
+        <button type="button" class="btn btn-outline-light mx-2">Login</button>
+        <button type="button" class="btn btn-outline-light mx-2">Sign-up</button>
     </div>
 </header>

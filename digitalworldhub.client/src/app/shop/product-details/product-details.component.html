@@ -5,11 +5,11 @@
     <div class="col-6">
         <h3>{{product.name}}</h3>
         <p>{{product.price | currency}}</p>
-        <div>
-            <i class="fa fa-minus-circle text-warning" style="cursor:pointer; font-size:2em;"></i>
+        <div class="d-flex justify-content-start align-items-center">
+            <i class="bi bi-dash-circle-fill text-warning mx-2" style="cursor:pointer; font-size:2em;"></i>
             <span class="font-weight-bold">2</span>
-            <i class="fa fa-plus-circle text-warning" style="cursor:pointer; font-size:2em;"></i>
-            <button class="btn btn-outline-secondary btn-lg">Add to basket</button>
+            <i class="bi bi-plus-circle-fill text-warning mx-2" style="cursor:pointer; font-size:2em;"></i>
+            <button class="btn btn-outline-primary"><i class="bi bi-cart-plus-fill mx-1"></i>Add to basket</button>
         </div>
     </div>
     <div class="row mt-5">
