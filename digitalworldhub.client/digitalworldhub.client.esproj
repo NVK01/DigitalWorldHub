@@ -9,6 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\app\core\interceptors\" />
+    <Folder Include="src\app\core\services\" />
     <Folder Include="src\app\environments\" />
     <Folder Include="src\app\shared\models\" />
     <Folder Include="src\app\shared\components\" />
