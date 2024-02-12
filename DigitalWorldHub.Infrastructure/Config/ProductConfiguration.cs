@@ -22,6 +22,12 @@ namespace DigitalWorldHub.Infrastructure.Config
                 .HasForeignKey(p => p.ProductBrandId);
             builder.HasOne(p => p.ProductType).WithMany()
                 .HasForeignKey(p => p.ProductTypeId);
+
+            builder.HasOne(p => p.User)
+                .WithMany(u => u.Products)
+                .HasForeignKey(p => p.UserId);
+
+
         }
     }
 }

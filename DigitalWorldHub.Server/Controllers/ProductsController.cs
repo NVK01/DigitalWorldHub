@@ -72,5 +72,7 @@ namespace DigitalWorldHub.Server.Controllers
             var productsTypes = await _typeRepository.ListAllAsync();
             return Ok(productsTypes);
         }
+
+       
     }
 }

@@ -21,7 +21,7 @@ namespace DigitalWorldHub.Application.Helpers
        
         public string Resolve(Product source, ProductToReturnDto destination, string destMember, ResolutionContext context)
         {
-            if(string.IsNullOrEmpty(source.PictureUrl)) 
+            if(!string.IsNullOrEmpty(source.PictureUrl)) 
             { 
                 return _config["ApiUrl"] + source.PictureUrl;
             }

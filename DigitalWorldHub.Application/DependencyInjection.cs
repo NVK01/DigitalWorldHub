@@ -1,4 +1,6 @@
 ﻿using DigitalWorldHub.Application.Helpers;
+using DigitalWorldHub.Application.Interfaces;
+using DigitalWorldHub.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,8 @@ namespace DigitalWorldHub.Application
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(MappingProfiles));
-            
+            services.AddScoped<ITokenService, TokenService>();
+
             return services;
         }
     }

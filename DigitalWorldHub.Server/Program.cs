@@ -1,7 +1,10 @@
 using DigitalWorldHub.Infrastructure;
 using DigitalWorldHub.Application;
 using DigitalWorldHub.Server.Middleware;
-
+using DigitalWorldHub.Core.Entities.User;
+using DigitalWorldHub.Infrastructure.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.FileProviders;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -14,6 +17,20 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 
+builder.Services.AddIdentityCore<AppUser> (options =>
+{
+    options.Password.RequiredLength = 6;
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+
+}).AddEntityFrameworkStores<StoreContext>()
+  .AddSignInManager<SignInManager<AppUser>>()
+  .AddUserManager<UserManager<AppUser>>()
+  .AddDefaultTokenProviders();
+
+
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("CorsPolice", policy =>
@@ -22,8 +39,9 @@ builder.Services.AddCors(opt =>
     });
 });
 var app = builder.Build();
-
+app.UseRouting();
 app.UseDefaultFiles();
+
 app.UseStaticFiles();
 
 // Configure the HTTP request pipeline.
@@ -36,16 +54,12 @@ app.UseSwaggerUI();
 app.UseStatusCodePagesWithReExecute("/errors/{0}");
 
 app.UseHttpsRedirection();
-
 app.UseCors("CorsPolice");
 
+app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseRouting();
-
 app.MapControllers();
-
-
 
 app.MapFallbackToFile("Index", "Fallback");
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DigitalWorldHub.Core.Entities.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,8 @@ namespace DigitalWorldHub.Core.Entities
         public int ProductTypeId { get; set; }
         public ProductBrand ProductBrand { get; set; }
         public int ProductBrandId { get; set; }
+
+        public string UserId { get; set; }
+        public AppUser User { get; set; }
     }
 }

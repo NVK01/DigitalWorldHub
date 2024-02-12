@@ -6,24 +6,50 @@ justify-content-md-between py-3 mb-4 border-bottom bg-primary">
 
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style="font-size:x-large;">
         <li>
-            <a href="#" class="nav-link px-3 position-relative header-link">
+            <button href="#" class="mx-3 position-relative btn btn-outline-light">
                 <i class="bi bi-chat mx-1"></i>
                 <div class="cart-no">3</div>
-            </a>
+            </button>
         </li>
         <li>
-            <a [routerLink]="['/shop']" class="nav-link px-3 position-relative header-link" routerLinkActiv="active">
+            <button [routerLink]="['basket']" class="mx-3 position-relative btn btn-outline-light" routerLinkActiv="active">
                 <i class="bi bi-cart"></i>
-                <div class="cart-no">2</div>
-            </a>
+                <div *ngIf="(basket$ | async) as basket" class="cart-no">{{basket.items.length}}</div>
+            </button>
         </li>
-        <li><a href="#" class="nav-link px-3 header-link" routerLinkActiv="active"><i class="bi bi-person mx-1"></i>Profile</a></li>
-        <li><a href="#" class="nav-link px-3 header-link" routerLinkActiv="active">Make an offer</a></li>
+
+        <li><button routerLink="shop" class="mx-3 btn btn-outline-light" routerLinkActiv="active"><i class="bi bi-bag"></i></button></li>
         <!--  <li><a [routerLink]="['/test-error']" class="nav-link px-2 header-link" routerLinkActiv="active">Errors</a></li> -->
     </ul>
+    <ng-container *ngIf="(currentUser$ | async) === null">
+        <div class="col-md-3 text-end">
+            <button routerLink="/account/login" type="button" class="btn btn-outline-light mx-2">Login</button>
+            <button routerLink="/account/register" type="button" class="btn btn-outline-light mx-2">Sign-up</button>
+        </div>
+    </ng-container>
 
-    <div class="col-md-3 text-end ">
-        <button type="button" class="btn btn-outline-light mx-2">Login</button>
-        <button type="button" class="btn btn-outline-light mx-2">Sign-up</button>
-    </div>
+    <ng-container *ngIf="currentUser$ | async">
+        <div class="dropdown mx-3" dropdown>
+            <button
+             type="button"
+            class="dropdown-toggle btn btn-outline-light mx-2"
+            dropdownToggle>Welcome {{(currentUser$ | async).displayName}}</button>
+
+            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu >
+                <button routerLink="/"
+                class="dropdown-item d-flex align-items-center py-2 btn-outline-light text-primary">
+                   <i class="bi bi-collection mx-1"></i> My Posting</button>
+
+                <button routerLink="/profile"
+                class="dropdown-item d-flex align-items-center py-2 btn-outline-light text-primary">
+                    <i class="bi bi-person mx-1"></i>Profile
+                </button>
+                <div class="dropdown-divider"></div>
+
+                <button (click)="logout()" class="dropdown-item d-flex align-items-center py-2 btn-outline-light text-primary">
+                    <i class="bi bi-box-arrow-right mx-1"></i>Logout</button>
+            </div>
+        </div>
+        
+    </ng-container>
 </header>

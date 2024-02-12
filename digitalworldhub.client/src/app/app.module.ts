@@ -27,7 +27,7 @@ import { LoadingInterceptor } from './core/services/loading.interceptor';
     FontAwesomeModule,
     CoreModule,
     HomeModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

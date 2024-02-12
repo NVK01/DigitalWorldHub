@@ -8,10 +8,10 @@
             <h3>{{product.name}}</h3>
             <p>{{product.price | currency}}</p>
             <div class="d-flex justify-content-start align-items-center">
-                <i class="bi bi-dash-circle-fill text-warning mx-2" style="cursor:pointer; font-size:2em;"></i>
-                <span class="font-weight-bold">2</span>
-                <i class="bi bi-plus-circle-fill text-warning mx-2" style="cursor:pointer; font-size:2em;"></i>
-                <button class="btn btn-outline-primary"><i class="bi bi-cart-plus-fill mx-1"></i>Add to basket</button>
+                <i (click)="decrementQuantity()" class="bi bi-dash-circle-fill text-warning mx-2" style="cursor:pointer; font-size:2em;"></i>
+                <span class="font-weight-bold">{{quantity}}</span>
+                <i (click)="incrementQuantity()" class="bi bi-plus-circle-fill text-warning mx-2" style="cursor:pointer; font-size:2em;"></i>
+                <button (click)="addItemToBasket()" class="btn btn-outline-primary"><i class="bi bi-cart-plus-fill mx-1"></i>Add to basket</button>
             </div>
         </div>
         <div class="row mt-5">

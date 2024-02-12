@@ -14,6 +14,7 @@ namespace DigitalWorldHub.Application
         Task<IReadOnlyList<Product>> GetProductsAsync();
         Task<IReadOnlyList<ProductBrand>> GetProductBrandsAsync();
         Task<IReadOnlyList<ProductType>> GetProductsTypesAsync();
+        Task AddProductAsync(Product product);
 
     }
 }

@@ -25,14 +25,6 @@ namespace DigitalWorldHub.Server.Controllers
             return Ok();
         }
 
-        //[HttpGet("servererror")]
-        //public ActionResult GetServerError()
-        //{
-        //    
-
-        //    return Ok();
-        //}
-
         [HttpGet("badrequest")]
         public ActionResult GetBadRequest()
         {

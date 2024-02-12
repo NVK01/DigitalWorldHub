@@ -2,6 +2,8 @@
 using DigitalWorldHub.Application;
 using DigitalWorldHub.Application.DTOs;
 using DigitalWorldHub.Core.Entities;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -47,6 +49,12 @@ namespace DigitalWorldHub.Infrastructure.Data
         public async Task<IReadOnlyList<ProductType>> GetProductsTypesAsync()
         {
             return await _context.ProductTypes.ToListAsync();
+        }
+
+        public async Task AddProductAsync(Product product)
+        {
+            await _context.Products.AddAsync(product);
+            await _context.SaveChangesAsync();
         }
     }
 }
